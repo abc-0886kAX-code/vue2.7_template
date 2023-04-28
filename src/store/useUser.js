@@ -1,6 +1,6 @@
 /*
  * @FilePath: \数字大厅\src\store\useUser.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-02-07 15:09:09
  * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-21 17:53:48

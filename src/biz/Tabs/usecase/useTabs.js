@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖数字大厅\src\biz\Tabs\usecase\useTabs.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-02-01 13:45:09
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-08 10:39:22
- * @Description: 
+ * @Description:
  */
 import EmptyView from "@/components/EmptyView.vue";
 
@@ -30,11 +30,11 @@ export function useTabs(props = {}) {
     function update(raw) {
         const entity = transObject(raw, TabsEntity());
 
-        if (unref(state.unusable)) return active.value = uuid();
+        if (unref(state.unusable)) return (active.value = uuid());
 
-        if (has(entity.keyword)) return active.value = entity.keyword;
+        if (has(entity.keyword)) return (active.value = entity.keyword);
 
-        return active.value = unref(dataset)[0].keyword;
+        return (active.value = unref(dataset)[0].keyword);
     }
 
     function setup(tabsource) {
@@ -60,8 +60,8 @@ export function useTabs(props = {}) {
         dataset,
         update,
         setup,
-        clear
-    }
+        clear,
+    };
 }
 
 export default useTabs;

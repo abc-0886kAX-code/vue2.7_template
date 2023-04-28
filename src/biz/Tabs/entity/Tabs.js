@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖大屏\src\biz\Tabs\entity\Tabs.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-02-01 13:33:04
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-02-01 14:12:21
- * @Description: 
+ * @Description:
  */
 import EmptyView from "@/components/EmptyView.vue";
 import { mergeObject } from "~/shared/merge";
@@ -18,7 +18,7 @@ export function TabsEntity(props, index) {
     return mergeObject(props, {
         index: transNumber(index, -1),
         keyword,
-        template
+        template,
     });
 }
 

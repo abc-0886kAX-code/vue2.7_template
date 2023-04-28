@@ -1,10 +1,10 @@
 <!--
  * @FilePath: \明湖数字大厅\src\components\DialogLayout.vue
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-03-09 16:09:30
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-09 16:16:54
- * @Description: 
+ * @Description:
 -->
 <script setup>
 import { useTabs } from "@/biz/Tabs";
@@ -12,11 +12,11 @@ import { useTabs } from "@/biz/Tabs";
 const props = defineProps({
     tabProps: {
         type: Array,
-        default: () => ([])
-    }
+        default: () => [],
+    },
 });
 const { active, component, dataset, update } = useTabs({
-    data: props.tabProps
+    data: props.tabProps,
 });
 
 function tabClick(entity) {
@@ -40,6 +40,6 @@ function tabClick(entity) {
     </div>
 </template>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 @import "@/assets/style/dialog-tab.scss";
 </style>

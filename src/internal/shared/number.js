@@ -2,9 +2,9 @@
  * @FilePath: \明湖数字大厅\src\internal\shared\number.js
  * @Author: maggot-code
  * @Date: 2022-12-22 11:11:05
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-04 15:49:38
- * @Description: 
+ * @Description:
  */
 import { transNumber } from "~/shared/trans";
 import { mergeObject } from "~/shared/merge";
@@ -12,7 +12,7 @@ import { mergeObject } from "~/shared/merge";
 export function formatRate(value, props) {
     const { rate, decimal } = mergeObject({ rate: 1000, decimal: 0 }, props);
 
-    if (transNumber(decimal) <= 0) return (transNumber(value) / transNumber(rate));
+    if (transNumber(decimal) <= 0) return transNumber(value) / transNumber(rate);
 
     return (transNumber(value) / transNumber(rate)).toFixed(transNumber(decimal));
 }
@@ -42,4 +42,3 @@ export function todownNumber(value, props) {
     const num = parseFloat(value);
     return num - num * (percentage / 100);
 }
-

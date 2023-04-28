@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖大屏\src\hooks\router\useMenu.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-01-30 15:49:15
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-01-30 17:50:04
- * @Description: 
+ * @Description:
  */
 import { getCurrentInstance } from "vue";
 
@@ -53,10 +53,7 @@ export function useMenuNav() {
     const { proxy } = getCurrentInstance();
     const route = useFirstRoute();
     const source = computed(() => {
-        if (
-            !unref(route).state
-            || !unref(route).store.meta.navstate.main
-        ) return [];
+        if (!unref(route).state || !unref(route).store.meta.navstate.main) return [];
 
         return proxy.$router.getRoutes().filter((item) => {
             return eq(item?.parent?.name, unref(route).store.name);
@@ -80,7 +77,7 @@ export function useMenuTohome() {
 
     return {
         visableTohome,
-        tohome
+        tohome,
     };
 }
 

@@ -2,9 +2,9 @@
  * @FilePath: \明湖数字大厅\src\biz\Popup\usecase\usePopup.js
  * @Author: maggot-code
  * @Date: 2022-12-05 14:13:03
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-04 20:01:53
- * @Description: 
+ * @Description:
  */
 import { POPUP_SYMBOLE } from "../shared/context";
 import { DialogEntity } from "../entity/Dialog";
@@ -25,8 +25,8 @@ export function usePopup(props) {
 
     return {
         define,
-        release
-    }
+        release,
+    };
 }
 
 export default usePopup;

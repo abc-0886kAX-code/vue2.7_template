@@ -2,7 +2,7 @@
  * @FilePath: \明湖大屏\plugins\lodash.js
  * @Author: maggot-code
  * @Date: 2022-11-21 14:42:17
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-02-16 09:24:30
  * @Description:
  */
@@ -41,5 +41,5 @@ export default [
     "clone",
     "cloneDeep",
     "flatten",
-    "flattenDeep"
+    "flattenDeep",
 ];

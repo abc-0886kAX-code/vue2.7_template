@@ -2,9 +2,9 @@
  * @FilePath: \明湖数字大厅\src\biz\Popup\usecase\definePopup.js
  * @Author: maggot-code
  * @Date: 2022-12-05 14:10:19
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-04 20:19:05
- * @Description: 
+ * @Description:
  */
 import { POPUP_SYMBOLE } from "../shared/context";
 import { useShallowObject } from "@/hooks/ref/useShallowObject";
@@ -31,7 +31,7 @@ export function definePopup() {
             isFunction(done) && done();
             entity.state.toDisable();
             // cache.remove(key);
-        }
+        };
     }
     function toRecord() {
         record.value++;

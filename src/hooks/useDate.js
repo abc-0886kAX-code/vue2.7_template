@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖数字大厅\src\hooks\useDate.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-03-04 10:32:20
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-10 07:10:35
- * @Description: 
+ * @Description:
  */
 import dayjs from "dayjs";
 
@@ -22,14 +22,11 @@ export function useDateSort(field, state = false) {
         } else {
             return 0;
         }
-    }
+    };
 }
 
 export function useDate(startDate, endDate) {
-    const range = shallowRef([
-        dayjs(startDate).format(formatDate),
-        dayjs(endDate).format(formatDate)
-    ]);
+    const range = shallowRef([dayjs(startDate).format(formatDate), dayjs(endDate).format(formatDate)]);
 
     return range;
 }
@@ -64,7 +61,10 @@ export function useDateScope(sh, eh) {
 export function useDateBefore(eh) {
     const now = dayjs();
     // 开始时间，当前时间的小时数减去eh小时
-    const start = now.hour(now.hour() - eh).minute(0).second(0);
+    const start = now
+        .hour(now.hour() - eh)
+        .minute(0)
+        .second(0);
     // 结束时间，当前时间的小时数
     const end = now.hour(now.hour()).minute(0).second(0);
     return useDate(start, end);
@@ -74,7 +74,10 @@ export function useDateBefore(eh) {
 export function useDateContainmmBefore(eh) {
     const now = dayjs();
     // 开始时间，当前时间的小时数减去eh小时
-    const start = now.hour(now.hour() - eh).minute(0).second(0);
+    const start = now
+        .hour(now.hour() - eh)
+        .minute(0)
+        .second(0);
     // 结束时间，当前时间的小时数
     const end = now.hour(now.hour()).second(0);
     console.log(end);

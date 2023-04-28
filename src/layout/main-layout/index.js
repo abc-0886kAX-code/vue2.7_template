@@ -1,11 +1,11 @@
 /*
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2021-05-11 16:26:09
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2021-05-11 16:29:06
  * @Description: file content
  */
-import MainLayout from './main-layout.vue';
+import MainLayout from "./main-layout.vue";
 
 /* istanbul ignore next */
 MainLayout.install = function (Vue) {

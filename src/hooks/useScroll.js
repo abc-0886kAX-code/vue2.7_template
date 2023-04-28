@@ -2,9 +2,9 @@
  * @FilePath: \明湖数字大厅\src\hooks\useScroll.js
  * @Author: maggot-code
  * @Date: 2022-12-08 02:16:55
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-04 17:44:53
- * @Description: 
+ * @Description:
  */
 import { createEventHook } from "@vueuse/core";
 
@@ -46,7 +46,7 @@ export function useScroll() {
         scrollTopValue,
         setupTop,
         onRoll: rollEvent.on,
-    }
+    };
 }
 
 export default useScroll;

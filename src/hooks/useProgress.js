@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖大屏\src\hooks\useProgress.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-02-07 16:30:14
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-02-14 13:41:25
- * @Description: 
+ * @Description:
  */
 import { createEventHook } from "@vueuse/core";
 import { transNumber } from "~/shared/trans";
@@ -45,14 +45,22 @@ export function useProgress(total, space) {
         clear();
     }
 
-    watch(index, (idx) => {
-        event.trigger(idx);
-    }, { immediate: true });
+    watch(
+        index,
+        (idx) => {
+            event.trigger(idx);
+        },
+        { immediate: true }
+    );
 
-    watch(cap, (value) => {
-        if (cap - 1 < 0) return;
-        index.value = value - 1;
-    }, { immediate: true });
+    watch(
+        cap,
+        (value) => {
+            if (cap - 1 < 0) return;
+            index.value = value - 1;
+        },
+        { immediate: true }
+    );
 
     onUnmounted(() => {
         event.off();

@@ -1,12 +1,12 @@
 /*
  * @FilePath: \明湖数字大厅\src\store\useProgressMask.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-03-12 00:25:16
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-03-12 01:20:08
- * @Description: 
+ * @Description:
  */
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 import { transNumber, transString } from "~/shared/trans";
 
 function setupLimit() {
@@ -16,14 +16,14 @@ function setupLimit() {
 
 const paths = [];
 
-export const Namespace = 'useProgressMask';
+export const Namespace = "useProgressMask";
 
 export const useProgressMask = defineStore(Namespace, {
     state: () => ({
         limit: setupLimit(),
         percentage: 0,
         active: false,
-        tips: "请稍后.."
+        tips: "请稍后..",
     }),
 
     getters: {
@@ -38,7 +38,7 @@ export const useProgressMask = defineStore(Namespace, {
         },
         unmeet() {
             return !this.meet;
-        }
+        },
     },
 
     actions: {
@@ -65,16 +65,16 @@ export const useProgressMask = defineStore(Namespace, {
         // 完成
         toComplete() {
             this.setupPercentage(100);
-        }
+        },
     },
 
     persist: {
         key: Namespace,
-        paths
-    }
+        paths,
+    },
 });
 
 export default {
     namespace: Namespace,
-    store: useProgressMask
+    store: useProgressMask,
 };

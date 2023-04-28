@@ -1,10 +1,10 @@
 /*
  * @FilePath: \明湖大屏\src\router\meta.js
- * @Author: zhangyang
+ * @Author: zhangxin
  * @Date: 2023-01-30 15:25:13
- * @LastEditors: zhangyang
+ * @LastEditors: zhangxin
  * @LastEditTime: 2023-01-30 15:42:55
- * @Description: 
+ * @Description:
  */
 import { transObject } from "~/shared/trans";
 import { mergeObject } from "~/shared/merge";
@@ -18,7 +18,7 @@ export const NormMeta = {
     navstate: {
         main: false,
         second: false,
-    }
+    },
 };
 
 export function defineMeta(extend) {
