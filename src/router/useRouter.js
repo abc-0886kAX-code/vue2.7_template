@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue2.7_Mars3D_template\src\router\useRouter.js
+ * @FilePath: \vue2.7_template\src\router\useRouter.js
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-04-12 11:28:34
+ * @LastEditTime: 2023-05-05 17:06:01
  * @Description:
  */
 
@@ -30,11 +30,29 @@ const routes = [
         component: () => import("@/pages/Debug/debug.vue"),
     },
     {
-        name: "home",
+        name: "layout",
         path: "/",
+        redirect: "/home",
         meta: defineMeta({ level: 0 }),
         component: () => import("@/layout/Home.vue"),
-        children: [],
+        children: [
+            {
+                path: "/home",
+                name: "home",
+                meta: defineMeta({ level: 1, title: "首页" }),
+                component: () => import("@/pages/home/home.vue"),
+            },
+        ],
+    },
+    {
+        name: "404",
+        path: "/404",
+        meta: defineMeta({ title: "404" }),
+        component: () => import("@/pages/NotPage/not-page.vue"),
+    },
+    {
+        path: "*",
+        redirect: "/404",
     },
 ];
 const router = defineRouter(routes);
