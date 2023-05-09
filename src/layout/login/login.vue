@@ -3,7 +3,7 @@
  * @Author: zhangxin
  * @Date: 2023-04-12 10:51:30
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-05-05 17:07:27
+ * @LastEditTime: 2023-05-09 09:34:46
  * @Description:https://element-plus-admin.cn/assets/login-box-bg-fec91044.svg
 -->
 <script setup>
@@ -47,7 +47,9 @@ function logon() {
 <template>
     <div class="login">
         <div class="login-introduce">
-            <div class="login-introduce-logo">LOGO</div>
+            <div class="login-introduce-logo">
+                <img src="@/assets/images/logo.png" alt="" />
+            </div>
             <div class="login-introduce-content">
                 <img src="https://element-plus-admin.cn/assets/login-box-bg-fec91044.svg" alt="" />
                 <div class="login-introduce-content-label">欢迎使用本系统</div>
@@ -95,9 +97,11 @@ function logon() {
         color: #fff;
         &-logo {
             height: 50px;
-            width: 100%;
-            font-size: 18px;
-            font-weight: bold;
+            width: 120px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
         &-content {
             width: 100%;
