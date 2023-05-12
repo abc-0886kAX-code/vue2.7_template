@@ -3,7 +3,7 @@
  * @Author: zhangxin
  * @Date: 2023-04-12 10:51:30
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-05-09 09:34:46
+ * @LastEditTime: 2023-05-12 16:17:45
  * @Description:https://element-plus-admin.cn/assets/login-box-bg-fec91044.svg
 -->
 <script setup>
@@ -51,7 +51,9 @@ function logon() {
                 <img src="@/assets/images/logo.png" alt="" />
             </div>
             <div class="login-introduce-content">
-                <img src="https://element-plus-admin.cn/assets/login-box-bg-fec91044.svg" alt="" />
+                <div class="login-introduce-content-image">
+                    <img src="https://element-plus-admin.cn/assets/login-box-bg-fec91044.svg" alt="" />
+                </div>
                 <div class="login-introduce-content-label">欢迎使用本系统</div>
                 <div class="login-introduce-content-desc">基于VUE2.7实现客户端开发平台</div>
             </div>
@@ -110,8 +112,27 @@ function logon() {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            img {
+            &-image {
                 width: 350px;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+
+                &::after {
+                    content: "";
+                    height: 150%;
+                    width: 25px;
+                    background: #fff;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    opacity: 0.6;
+                    filter: blur(6px);
+                    animation: move 1s infinite ease-out;
+                }
             }
             &-label {
                 font-size: 20px;
@@ -147,6 +168,15 @@ function logon() {
                 font-weight: bold;
             }
         }
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-200px, -200px) rotate(45deg);
+    }
+    100% {
+        transform: translate(200px, 200px) rotate(45deg);
     }
 }
 </style>
