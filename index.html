@@ -3,7 +3,7 @@
  * @Author: maggot-code
  * @Date: 2022-11-21 14:19:59
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-04-12 13:16:34
+ * @LastEditTime: 2023-05-15 16:13:53
  * @Description:
 -->
 <!DOCTYPE html>
@@ -13,71 +13,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        .app-loading {
-            width: 48px;
-            height: 48px;
+        .loader-container {
+            width: 100px;
+            height: 100px;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .app-loading::before {
-            content: '';
-            width: 48px;
-            height: 5px;
-            background: #f0808050;
+        .loader-child {
             position: absolute;
-            top: 60px;
-            left: 0%;
-            border-radius: 50%;
-            animation: shadowAnime 0.5s linear infinite;
-        }
-
-        .app-loading::after {
-            content: '';
             width: 100%;
             height: 100%;
-            background: #f08080;
-            position: absolute;
-            top: 0;
-            left: 0%;
-            border-radius: 4px;
-            animation: jumpAnime 0.5s linear infinite;
-        }
+            box-sizing: border-box;
+            border-radius: 50%;
 
-        @keyframes jumpAnime {
-            15% {
-                border-bottom-right-radius: 3px;
+            &:nth-of-type(1) {
+                left: 0%;
+                top: 0%;
+                animation: rotate-one 1.15s linear infinite;
+                border-bottom: 3px solid #5c5edc;
             }
 
-            25% {
-                transform: translateY(9px) rotate(22.5deg);
+            &:nth-of-type(2) {
+                right: 0%;
+                top: 0%;
+                animation: rotate-two 1.15s linear infinite;
+                border-right: 3px solid #9e85c3;
             }
 
-            50% {
-                transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-                border-bottom-right-radius: 40px;
-            }
-
-            75% {
-                transform: translateY(9px) rotate(67.5deg);
-            }
-
-            100% {
-                transform: translateY(0) rotate(90deg);
+            &:nth-of-type(3) {
+                right: 0%;
+                bottom: 0%;
+                animation: rotate-three 1.15s linear infinite;
+                border-top: 3px solid #e9908a;
             }
         }
 
-        @keyframes shadowAnime {
-
-            0%,
-            100% {
-                transform: scale(1, 1);
+        @keyframes rotate-one {
+            0% {
+                transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
             }
 
-            50% {
-                transform: scale(1.2, 1);
+            100% {
+                transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes rotate-two {
+            0% {
+                transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes rotate-three {
+            0% {
+                transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
             }
         }
 
@@ -92,12 +92,6 @@
             overflow: hidden;
         }
 
-        .lodingImg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         #app {
             width: 100%;
             height: 100%;
@@ -110,8 +104,10 @@
 <body>
     <div id="app">
         <!-- 原加载动画 -->
-        <div class="app-loading">
-
+        <div class="loader-container">
+            <div class="loader-child"></div>
+            <div class="loader-child"></div>
+            <div class="loader-child"></div>
         </div>
     </div>
     <script type="module" src="/src/main.js"></script>
